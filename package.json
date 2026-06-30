@@ -1,0 +1,11 @@
+{
+  "name": "com.llib.stat",
+  "version": "1.0.0",
+  "displayName": "Stat System",
+  "description": "Audio Mixer \ub97c \ud65c\uc6a9\ud574 \uc720\ub2c8\ud2f0 Audio Source\ub97c \ucc44\ub110\ubcc4\ub85c \uc7ac\uc0dd, \uad00\ub9ac\ud569\ub2c8\ub2e4.",
+  "unity": "2022.0",
+  "author": {
+    "name": "LUMOS",
+    "email": "lumos5934@gmail.com"
+  }
+}
