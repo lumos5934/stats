@@ -1,7 +1,7 @@
 {
-  "name": "com.llib.stat",
+  "name": "com.llib.stats",
   "version": "1.0.0",
-  "displayName": "Stat System",
+  "displayName": "Stats",
   "description": "\ubc94\uc6a9\uc801\uc778 \uc2a4\ud0ef\uacfc \ub9ac\uc18c\uc2a4\ub97c \uc81c\uacf5\ud569\ub2c8\ub2e4.",
   "unity": "2022.0",
   "author": {
