@@ -1,4 +1,4 @@
-# Stat System
+# Stats
 
 base value와 modifier를 기반으로 스탯을 계산하고, 현재/최대값 형태의 리소스(체력, 마나 등)를 관리합니다. Stat에 modifier를 추가/제거하면 Resource의 최대값도 자동으로 반영됩니다.
 
