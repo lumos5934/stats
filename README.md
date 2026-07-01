@@ -1,6 +1,8 @@
 # Stats
 
-base value와 modifier를 기반으로 스탯을 계산하고, 현재/최대값 형태의 리소스(체력, 마나 등)를 관리합니다. Stat에 modifier를 추가/제거하면 Resource의 최대값도 자동으로 반영됩니다.
+base value와 modifier를 기반으로 스탯을 계산하고, 현재/최대값 형태의 리소스(체력, 마나 등)를 관리합니다. Stat에 modifier를 추가/제거하면 Resource의 최대값도 자동으로 반영됩니다.<br>
+
+<br>
 
 [ Usage ](#usage) <br>
 [ API ](#api)
@@ -12,16 +14,17 @@ base value와 modifier를 기반으로 스탯을 계산하고, 현재/최대값 
 
 ## 🔧Usage
 
-<br>
-
 #### Stat 생성
+
+key는 string으로 식별합니다.
+
 ```cs
 
 var attackPower = new Stat("attack_power", baseValue: 10f);
 
 ```
 
-key는 string으로 식별합니다.
+
 
 <br>
 <br>
@@ -58,6 +61,9 @@ attackPower.OnValueChanged += newValue =>
 <br>
 
 #### Resource 생성 및 사용
+
+`maxHp`에 modifier가 추가/제거되면 `hp.Max`가 자동으로 갱신되고, `Current`는 새 `Max`를 넘지 않도록 clamp됩니다. <br>
+
 ```cs
 
 var maxHp = new Stat("max_hp", baseValue: 100f);
@@ -78,7 +84,6 @@ hp.OnDepleted += () =>
 
 ```
 
-`maxHp`에 modifier가 추가/제거되면 `hp.Max`가 자동으로 갱신되고, `Current`는 새 `Max`를 넘지 않도록 clamp됩니다.
 
 <br>
 <br>
