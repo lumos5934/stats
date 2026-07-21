@@ -10,15 +10,6 @@ namespace LLib
         private bool _isDirty = true;
         private float _value;
 
-        public Stat(string key, float baseValue)
-        {
-            Key = key;
-            BaseValue = baseValue;
-            _comparison = (a, b) => a.Order.CompareTo(b.Order);
-        }
-
-        public string Key { get; }
-        
         public IReadOnlyList<StatModifier> Modifiers => _modifiers;
         public float BaseValue { get; private set; }
 
@@ -37,6 +28,13 @@ namespace LLib
 
         public event Action<float> OnValueChanged;
         
+        
+        public Stat(float baseValue)
+        {
+            BaseValue = baseValue;
+            _comparison = (a, b) => a.Order.CompareTo(b.Order);
+        }
+                
 
         public void SetBaseValue(float baseValue)
         {
