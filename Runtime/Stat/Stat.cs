@@ -29,16 +29,22 @@ namespace LLib
         public event Action<float> OnValueChanged;
         
         
-        public Stat(float baseValue)
+        public Stat(float baseValue = 0)
         {
             BaseValue = baseValue;
             _comparison = (a, b) => a.Order.CompareTo(b.Order);
         }
                 
 
-        public void SetBaseValue(float baseValue)
+        public void SetBaseValue(float value)
         {
-            BaseValue = baseValue;
+            BaseValue = value;
+            MarkDirtyAndNotify();
+        }
+
+        public void AddBaseValue(float value)
+        {
+            BaseValue += value;
             MarkDirtyAndNotify();
         }
 
