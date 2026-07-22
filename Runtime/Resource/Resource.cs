@@ -6,7 +6,6 @@ namespace LLib
 {
     public class Resource
     {
-        public string Key { get; }
         public Stat MaxStat { get; }
         public float Current { get; private set; }
         public float Max => MaxStat.Value;
@@ -14,9 +13,8 @@ namespace LLib
         public event Action<float, float> OnChanged;
         public event Action OnEmpty;
 
-        public Resource(string key, Stat maxStat, float? initialCurrent = null)
+        public Resource(Stat maxStat, float? initialCurrent = null)
         {
-            Key = key;
             MaxStat = maxStat;
             Current = initialCurrent ?? maxStat.Value;
             
