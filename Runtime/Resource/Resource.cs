@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Reflection;
 using UnityEngine;
 
 namespace LLib
@@ -12,6 +11,7 @@ namespace LLib
 
         public event Action<float, float> OnChanged;
         public event Action OnEmpty;
+        public event Action OnFull;
 
         public Resource(Stat maxStat, float? initialCurrent = null)
         {
@@ -31,9 +31,17 @@ namespace LLib
                 OnChanged?.Invoke(Current, Max);
             }
 
-            if (Current <= 0f && prev > 0f)
+            if (prev > 0f)
             {
-                OnEmpty?.Invoke();
+                if (Current <= 0f)
+                {
+                    OnEmpty?.Invoke();
+                }
+
+                if (Mathf.Approximately(Current, Max))
+                {
+                    OnFull?.Invoke();
+                }
             }
         }
 
